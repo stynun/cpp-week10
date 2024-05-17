@@ -18,7 +18,7 @@ LinkedList::~LinkedList() {
 
 void LinkedList::print() {
     Node *current = head_;
-    while (current->next_ != nullptr) {
+    for (int i = 0; i < size_; i++) {
         std::cout << current->value_ << " ";
         current = current->next_;
     }
@@ -41,6 +41,7 @@ void LinkedList::insert(int index, int value) {
         previous->next_ = newNode;
     }
     
+    size_++;
 }
 
 int LinkedList::get(int index) {
@@ -74,4 +75,5 @@ void LinkedList::remove(int index) {
         delete current;
     }
     
+    size_--;
 }
